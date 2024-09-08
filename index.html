@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="min-h-screen bg-teal-200 p-4">
+        <!-- Header -->
+        <div class="text-center text-3xl font-bold text-black bg-cyan-600 py-4 rounded-md mb-4">
+            Weather Forecasting System  
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+   
+            <div class="bg-cyan-100 p-4 rounded-md shadow-md">
+                <div class="relative mb-4">
+                    <label class="block mb-2 text-cyan-700 font-semibold text-2xl">Enter a City Name</label>
+                    <input type="text" id="cityInput" placeholder="E.g., New York, London, Tokyo" class="w-full mb-4 p-2 border rounded-md text-xl" autocomplete="off">
+                    
+                   
+                    <div id="recentCitiesDropdown" class="absolute bg-white shadow-md rounded-md mt-2 w-full hidden"></div>
+                </div>
+
+                <button id="searchButton" class="w-full bg-green-500 text-white py-2 rounded-md mb-2 hover:bg-green-600 text-xl">Search</button>
+                <div class="text-center font-semibold text-cyan-600 mb-2">--------------  OR  --------------</div>
+                <button id="locationButton" class="w-full bg-cyan-500 text-white py-2 rounded-md hover:bg-cyan-600 text-xl">Use Current Location</button>
+            </div>
+
+         
+            <div class="lg:col-span-2">
+                <div id="currentWeather" class="flex flex-col sm:flex-row justify-between items-center bg-cyan-500 text-white p-4 rounded-md shadow-md">
+                    <!-- Weather Info -->
+                    <div>
+                        <div class="text-xl font-bold ">City Name (Date)</div>
+                        <div class="text-lg">Temperature: --°C</div>
+                        <div class="text-lg">Wind: -- M/S</div>
+                        <div class="text-lg">Humidity: --%</div>
+                    </div>
+                    
+                    <div class="flex items-center flex-col">
+                        <img id="weatherIcon" src="" alt="Weather Icon" class="w-20 h-20 mr-5">
+                        <div id="weatherDescription" class="text-lg">Weather Description</div>
+                    </div>
+                </div>
+<h2 class="text-3xl font-bold text-center p-4 text-cyan-900">5-Days Forecast</h2>
+                <!-- 5-Day Forecast -->
+                <div id="forecast" class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xl"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
